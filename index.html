@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PC Build Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- HOME -->
+    <main class="hero" id="home">
+
+        <div class="logo">⚡ PC BUILD</div>
+
+        <h1>
+            BUILD YOUR <span>DREAM PC</span>
+        </h1>
+
+        <p>
+            Find the best PC configuration for your budget.
+        </p>
+
+        <button id="startBtn">
+            START BUILDING
+        </button>
+
+        <div class="categories">
+            <div class="category">🎮 Gaming</div>
+            <div class="category">🎥 Streaming</div>
+            <div class="category">🎬 Editing</div>
+        </div>
+
+    </main>
+
+
+    <!-- BUDGET -->
+    <section class="budget-section" id="budgetSection">
+
+        <div class="logo">⚡ PC BUILD</div>
+
+        <h2>WHAT'S YOUR <span>BUDGET?</span></h2>
+
+        <p>
+            Choose how much you want to spend on your PC.
+        </p>
+
+        <div class="budget-grid">
+
+            <button class="budget-btn" data-budget="3000">
+                3,000 DH
+            </button>
+
+            <button class="budget-btn" data-budget="4000">
+                4,000 DH
+            </button>
+
+            <button class="budget-btn" data-budget="5000">
+                5,000 DH
+            </button>
+
+            <button class="budget-btn" data-budget="6000">
+                6,000 DH
+            </button>
+
+            <button class="budget-btn" data-budget="8000">
+                8,000 DH
+            </button>
+
+            <button class="budget-btn" data-budget="10000">
+                10,000 DH
+            </button>
+
+        </div>
+
+        <div class="custom-budget">
+            <input
+                type="number"
+                id="customBudget"
+                placeholder="Enter custom budget"
+            >
+
+            <button id="customBtn">
+                CONTINUE
+            </button>
+        </div>
+
+        <button class="back-btn" id="backBtn">
+            ← BACK
+        </button>
+
+    </section>
+<!-- CUSTOM BUILDER -->
+
+<section class="custom-builder" id="customBuilder">
+
+    <div class="logo">⚡ PC BUILD</div>
+
+    <h2>BUILD YOUR <span>OWN PC</span></h2>
+
+    <p>Choose your components and create your perfect build.</p>
+<div class="usage-selector">
+
+    <h3>WHAT WILL YOU USE YOUR PC FOR?</h3>
+
+    <div class="usage-options">
+
+        <button class="usage-btn active" data-usage="gaming">
+            🎮 GAMING
+        </button>
+
+        <button class="usage-btn" data-usage="streaming">
+            🎥 STREAMING
+        </button>
+
+        <button class="usage-btn" data-usage="editing">
+            🎬 EDITING
+        </button>
+
+    </div>
+
+</div>
+    <div class="builder-container">
+
+        <div class="builder-card">
+
+            <label>💰 YOUR BUDGET</label>
+
+            <input
+                type="number"
+                id="builderBudget"
+                placeholder="Example: 5000"
+            >
+
+        </div>
+
+        <div class="builder-card">
+
+            <label>🧠 CPU</label>
+
+           <select id="cpuSelect">
+
+    <option value="0">Select CPU</option>
+
+    <option value="700">Ryzen 5 3600 — 700 DH</option>
+    <option value="800">Ryzen 5 5500 — 800 DH</option>
+    <option value="1100">Ryzen 5 5600 — 1100 DH</option>
+    <option value="1350">Ryzen 7 5700X — 1350 DH</option>
+
+    <option value="1600">Ryzen 5 7600 — 1600 DH</option>
+    <option value="1900">Ryzen 7 7700 — 1900 DH</option>
+    <option value="2200">Ryzen 7 7800X3D — 2200 DH</option>
+
+</select>
+
+        </div>
+
+        <div class="builder-card">
+
+            <label>🎮 GPU</label>
+
+            <select id="gpuSelect">
+    <option value="0">Select GPU</option>
+    <option value="1000">GTX 1660 Super — 1000 DH</option>
+    <option value="1400">RX 6600 — 1400 DH</option>
+    <option value="1600">RTX 3060 — 1600 DH</option>
+    <option value="1900">RX 7600 — 1900 DH</option>
+    <option value="2200">RTX 4060 — 2200 DH</option>
+    <option value="2600">RX 7700 XT — 2600 DH</option>
+    <option value="3200">RTX 4070 — 3200 DH</option>
+    <option value="4000">RTX 5070 — 4000 DH</option>
+</select>
+
+        </div>
+
+        <div class="builder-card">
+
+            <label>🧩 RAM</label>
+
+            <select id="ramSelect">
+    <option value="0">Select RAM</option>
+    <option value="350">8GB DDR4 — 350 DH</option>
+    <option value="450">16GB DDR4 — 450 DH</option>
+    <option value="750">32GB DDR4 — 750 DH</option>
+    <option value="700">16GB DDR5 — 700 DH</option>
+    <option value="1100">32GB DDR5 — 1100 DH</option>
+    <option value="1500">64GB DDR5 — 1500 DH</option>
+</select>
+
+        </div>
+
+        <div class="builder-card">
+
+            <label>💾 STORAGE</label>
+
+            <select id="storageSelect">
+    <option value="0">Select Storage</option>
+    <option value="250">256GB NVMe — 250 DH</option>
+    <option value="350">500GB NVMe — 350 DH</option>
+    <option value="550">1TB NVMe — 550 DH</option>
+    <option value="950">2TB NVMe — 950 DH</option>
+    <option value="1600">4TB NVMe — 1600 DH</option>
+</select>
+
+        </div>
+
+        <div class="builder-card">
+
+            <label>🔌 PSU</label>
+
+            <select id="psuSelect">
+    <option value="0">Select PSU</option>
+    <option value="300">450W — 300 DH</option>
+    <option value="350">550W — 350 DH</option>
+    <option value="500">650W — 500 DH</option>
+    <option value="700">750W — 700 DH</option>
+    <option value="900">850W — 900 DH</option>
+    <option value="1200">1000W — 1200 DH</option>
+</select>
+
+        </div>
+
+        <div class="builder-card">
+
+            <label>🖥️ CASE</label>
+
+            <select id="caseSelect">
+    <option value="0">Select Case</option>
+    <option value="250">Basic Case — 250 DH</option>
+    <option value="300">Gaming Case — 300 DH</option>
+    <option value="500">Airflow Gaming Case — 500 DH</option>
+    <option value="650">ARGB Airflow Case — 650 DH</option>
+    <option value="800">Premium Gaming Case — 800 DH</option>
+    <option value="1100">High-End Airflow Case — 1100 DH</option>
+</select>
+
+        </div>
+
+    </div>
+
+    <div class="builder-total">
+
+        <small>TOTAL PRICE</small>
+
+        <h3 id="builderTotal">0 DH</h3>
+
+        <p id="budgetStatus">
+            Select your components.
+        </p>
+
+    </div>
+
+    <button id="checkBuildBtn">
+        CHECK BUILD
+    </button>
+<!-- COMPATIBILITY CHECK -->
+
+<div class="compatibility-box" id="compatibilityBox">
+
+    <h2>COMPATIBILITY <span>CHECK</span></h2>
+
+    <div class="compatibility-status" id="compatibilityStatus">
+        🟢 BUILD IS COMPATIBLE
+    </div>
+
+    <p id="compatibilityMessage">
+        Your selected components work well together.
+    </p>
+
+</div>
+<div class="build-summary" id="buildSummary">
+
+    <h2>BUILD <span>SUMMARY</span></h2>
+
+    <div class="summary-grid">
+
+        <div>
+            <small>CPU</small>
+            <strong id="summaryCpu"></strong>
+        </div>
+
+        <div>
+            <small>GPU</small>
+            <strong id="summaryGpu"></strong>
+        </div>
+
+        <div>
+            <small>RAM</small>
+            <strong id="summaryRam"></strong>
+        </div>
+
+        <div>
+            <small>STORAGE</small>
+            <strong id="summaryStorage"></strong>
+        </div>
+
+        <div>
+            <small>PSU</small>
+            <strong id="summaryPsu"></strong>
+        </div>
+
+        <div>
+            <small>CASE</small>
+            <strong id="summaryCase"></strong>
+        </div>
+
+    </div>
+
+    <div class="summary-total">
+        <small>TOTAL</small>
+        <h3 id="summaryTotal">0 DH</h3>
+    </div>
+    <div class="performance-score">
+        <div class="fps-estimator">
+            <div class="build-rating">
+    <small>BUILD RATING</small>
+    <h3 id="buildRating">0 / 10 ⭐</h3>
+    <p id="buildRatingText">Waiting for build data...</p>
+</div>
+    <small>ESTIMATED GAMING FPS</small>
+    <h3 id="fpsEstimate">-- FPS</h3>
+    <p id="fpsText">Estimated at 1080p.</p>
+</div>
+    <small>PERFORMANCE SCORE</small>
+    <h3 id="performanceScore">0 / 100</h3>
+    <p id="performanceText">Select your components to see the score.</p>
+</div>
+
+</div>
+</section>
+<!-- BUILD RESULT -->
+
+<section class="result-section" id="resultSection">
+
+    <div class="logo">⚡ PC BUILD</div>
+
+    <h2>YOUR <span>RECOMMENDED BUILD</span></h2>
+
+    <p id="budgetText"></p>
+
+    <div class="build-grid">
+
+        <div class="component-card">
+            <div class="icon">🧠</div>
+            <small>CPU</small>
+            <strong id="cpu"></strong>
+        </div>
+
+        <div class="component-card">
+            <div class="icon">🎮</div>
+            <small>GPU</small>
+            <strong id="gpu"></strong>
+        </div>
+
+        <div class="component-card">
+            <div class="icon">🧩</div>
+            <small>RAM</small>
+            <strong id="ram"></strong>
+        </div>
+
+        <div class="component-card">
+            <div class="icon">💾</div>
+            <small>STORAGE</small>
+            <strong id="storage"></strong>
+        </div>
+
+        <div class="component-card">
+            <div class="icon">🔌</div>
+            <small>PSU</small>
+            <strong id="psu"></strong>
+        </div>
+
+        <div class="component-card">
+            <div class="icon">🖥️</div>
+            <small>CASE</small>
+            <strong id="case"></strong>
+        </div>
+
+    </div>
+
+    <div class="total-box">
+        <small>TOTAL PRICE</small>
+        <h3 id="total"></h3>
+    </div>
+
+    <button id="resultBackBtn" class="back-btn">
+        ← CHANGE BUDGET
+    </button>
+
+</section>
+
+<!-- LOADING SCREEN -->
+
+<div class="loading-screen" id="loadingScreen">
+
+    <div class="loading-spinner"></div>
+
+    <h3>BUILDING YOUR PC...</h3>
+
+    <p>Please wait</p>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
