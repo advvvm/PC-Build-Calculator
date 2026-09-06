@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PC Build Calculator</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         LOADING SCREEN
+    ========================== -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-spinner"></div>
+        <h2>BUILDING YOUR PC...</h2>
+        <p>Please wait</p>
+    </div>
+
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+    <nav class="navbar">
+
+        <div class="logo">
+            <span>PC</span> BUILD CALCULATOR
+        </div>
+
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#calculator">Calculator</a>
+            <a href="#builder">Builder</a>
+            <a href="#stores">Stores</a>
+        </div>
+
+    </nav>
+
+
+    <!-- =========================
+         HERO / HOME
+    ========================== -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <div class="hero-badge">
+                🇲🇦 MOROCCO PC BUILDER
+            </div>
+
+            <h1>
+                BUILD YOUR
+                <span>PERFECT PC</span>
+            </h1>
+
+            <p>
+                Choose your budget, select your components,
+                compare prices and create your perfect gaming PC.
+            </p>
+
+            <button class="primary-btn" id="startBtn">
+                START BUILDING →
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         BUDGET CALCULATOR
+    ========================== -->
+    <section class="section" id="calculator">
+
+        <div class="section-title">
+            <small>STEP 01</small>
+            <h2>CHOOSE YOUR <span>BUDGET</span></h2>
+            <p>How much do you want to spend on your PC?</p>
+        </div>
+
+
+        <div class="budget-grid">
+
+            <button class="budget-btn" data-budget="3000">
+                <strong>3,000 DH</strong>
+                <small>Entry Gaming</small>
+            </button>
+
+            <button class="budget-btn" data-budget="4000">
+                <strong>4,000 DH</strong>
+                <small>Budget Gaming</small>
+            </button>
+
+            <button class="budget-btn" data-budget="5000">
+                <strong>5,000 DH</strong>
+                <small>Balanced</small>
+            </button>
+
+            <button class="budget-btn" data-budget="6000">
+                <strong>6,000 DH</strong>
+                <small>Strong Gaming</small>
+            </button>
+
+            <button class="budget-btn" data-budget="8000">
+                <strong>8,000 DH</strong>
+                <small>High Performance</small>
+            </button>
+
+            <button class="budget-btn" data-budget="10000">
+                <strong>10,000 DH</strong>
+                <small>High-End</small>
+            </button>
+
+        </div>
+
+
+        <div class="custom-budget">
+
+            <label for="customBudget">
+                CUSTOM BUDGET
+            </label>
+
+            <div class="custom-budget-row">
+
+                <input
+                    type="number"
+                    id="customBudget"
+                    placeholder="Enter your budget in DH"
+                    min="1000"
+                >
+
+                <button id="customBtn">
+                    USE BUDGET
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- Recommended Build -->
+        <div class="recommended-build" id="recommendedBuild">
+
+            <div class="recommended-header">
+                <small>RECOMMENDED BUILD</small>
+                <h3 id="recommendedTitle">
+                    Select a budget to get a recommendation
+                </h3>
+            </div>
+
+            <div class="recommended-grid">
+
+                <div class="recommend-card">
+                    <small>CPU</small>
+                    <strong id="recommendedCpu">--</strong>
+                </div>
+
+                <div class="recommend-card">
+                    <small>GPU</small>
+                    <strong id="recommendedGpu">--</strong>
+                </div>
+
+                <div class="recommend-card">
+                    <small>RAM</small>
+                    <strong id="recommendedRam">--</strong>
+                </div>
+
+                <div class="recommend-card">
+                    <small>STORAGE</small>
+                    <strong id="recommendedStorage">--</strong>
+                </div>
+
+                <div class="recommend-card">
+                    <small>PSU</small>
+                    <strong id="recommendedPsu">--</strong>
+                </div>
+
+                <div class="recommend-card">
+                    <small>CASE</small>
+                    <strong id="recommendedCase">--</strong>
+                </div>
+
+            </div>
+
+            <div class="recommended-total">
+                <small>ESTIMATED TOTAL</small>
+                <strong id="recommendedTotal">0 DH</strong>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CUSTOM PC BUILDER
+    ========================== -->
+    <section class="section builder-section" id="builder">
+
+        <div class="section-title">
+
+            <small>STEP 02</small>
+
+            <h2>
+                CUSTOM <span>PC BUILDER</span>
+            </h2>
+
+            <p>
+                Select your own components and build your PC.
+            </p>
+
+        </div>
+
+
+        <!-- Builder Budget -->
+        <div class="builder-budget">
+
+            <label for="builderBudget">
+                YOUR BUILD BUDGET
+            </label>
+
+            <div class="budget-input-row">
+
+                <input
+                    type="number"
+                    id="builderBudget"
+                    placeholder="Example: 7000"
+                    min="1000"
+                >
+
+                <span>DH</span>
+
+            </div>
+
+        </div>
+
+
+        <!-- Components -->
+        <div class="components-grid">
+
+
+            <!-- CPU -->
+            <div class="component-card">
+
+                <div class="component-icon">
+                    🧠
+                </div>
+
+                <div class="component-info">
+
+                    <small>PROCESSOR</small>
+
+                    <h3>CPU</h3>
+
+                    <select id="cpuSelect">
+
+                        <option value="0">
+                            Select CPU
+                        </option>
+
+                        <option value="1499">
+                            AMD Ryzen 5 5600 — 1,499 DH
+                        </option>
+
+                        <option value="1599">
+                            AMD Ryzen 5 5600 MPK — 1,599 DH
+                        </option>
+
+                        <option value="1999">
+                            AMD Ryzen 7 5700X — 1,999 DH
+                        </option>
+
+                        <option value="2049">
+                            AMD Ryzen 7 5700 — 2,049 DH
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- GPU -->
+            <div class="component-card">
+
+                <div class="component-icon">
+                    🎮
+                </div>
+
+                <div class="component-info">
+
+                    <small>GRAPHICS CARD</small>
+
+                    <h3>GPU</h3>
+
+                    <select id="gpuSelect">
+
+                        <option value="0">
+                            Select GPU
+                        </option>
+
+                        <option value="4099">
+                            PNY GeForce RTX 5050 8GB — 4,099 DH
+                        </option>
+
+                        <option value="3999">
+                            XFX Radeon RX 7600 8GB — 3,999 DH
+                        </option>
+
+                        <option value="4499">
+                            MSI GeForce RTX 5060 8GB — 4,499 DH
+                        </option>
+
+                        <option value="5999">
+                            Gigabyte Radeon RX 9060 XT 16GB — 5,999 DH
+                        </option>
+
+                        <option value="8899">
+                            MSI GeForce RTX 5070 12GB — 8,899 DH
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- RAM -->
+            <div class="component-card">
+
+                <div class="component-icon">
+                    🧩
+                </div>
+
+                <div class="component-info">
+
+                    <small>MEMORY</small>
+
+                    <h3>RAM</h3>
+
+                    <select id="ramSelect">
+
+                        <option value="0">
+                            Select RAM
+                        </option>
+
+                        <option value="1399">
+                            16GB DDR4 3200MHz — 1,399 DH
+                        </option>
+
+                        <option value="1698">
+                            XPG GAMMIX D35 16GB DDR4 — 1,698 DH
+                        </option>
+
+                        <option value="2796">
+                            32GB DDR4 — 2,796 DH
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- STORAGE -->
+            <div class="component-card">
+
+                <div class="component-icon">
+                    💾
+                </div>
+
+                <div class="component-info">
+
+                    <small>STORAGE</small>
+
+                    <h3>SSD</h3>
+
+                    <select id="storageSelect">
+
+                        <option value="0">
+                            Select Storage
+                        </option>
+
+                        <option value="1099">
+                            PNY CS900 500GB — 1,099 DH
+                        </option>
+
+                        <option value="1199">
+                            PNY CS1030 500GB — 1,199 DH
+                        </option>
+
+                        <option value="1799">
+                            ADATA LEGEND 710 1TB — 1,799 DH
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- PSU -->
+            <div class="component-card">
+
+                <div class="component-icon">
+                    ⚡
+                </div>
+
+                <div class="component-info">
+
+                    <small>POWER SUPPLY</small>
+
+                    <h3>PSU</h3>
+
+                    <select id="psuSelect">
+
+                        <option value="0">
+                            Select PSU
+                        </option>
+
+                        <option value="349">
+                            SG 550W 80+ Bronze — 349 DH
+                        </option>
+
+                        <option value="599">
+                            SG 750W 80+ Bronze — 599 DH
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- CASE -->
+            <div class="component-card">
+
+                <div class="component-icon">
+                    🖥️
+                </div>
+
+                <div class="component-info">
+
+                    <small>PC CASE</small>
+
+                    <h3>CASE</h3>
+
+                    <select id="caseSelect">
+
+                        <option value="0">
+                            Select Case
+                        </option>
+
+                        <option value="399">
+                            MSI MAG FORGE M100A RGB — 399 DH
+                        </option>
+
+                        <option value="449">
+                            SG APOLLO 4 FAN ARGB — 449 DH
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Builder Total -->
+        <div class="builder-total-box">
+
+            <div>
+                <small>BUILD TOTAL</small>
+                <h3 id="builderTotal">0 DH</h3>
+            </div>
+
+            <div>
+                <small>BUDGET STATUS</small>
+                <p id="budgetStatus">
+                    Select your components
+                </p>
+            </div>
+
+        </div>
+
+
+        <button class="check-btn" id="checkBuildBtn">
+            CHECK MY BUILD ⚡
+        </button>
+
+
+        <!-- Compatibility -->
+        <div
+            class="compatibility-box"
+            id="compatibilityBox"
+        >
+
+            <small>COMPATIBILITY CHECK</small>
+
+            <h3 id="compatibilityTitle">
+                --
+            </h3>
+
+            <p id="compatibilityText">
+                Select your components and check your build.
+            </p>
+
+        </div>
+
+
+        <!-- =========================
+             BUILD SUMMARY
+        ========================== -->
+        <div
+            class="build-summary"
+            id="buildSummary"
+        >
+
+            <div class="summary-header">
+
+                <small>YOUR CUSTOM PC</small>
+
+                <h2>
+                    BUILD <span>SUMMARY</span>
+                </h2>
+
+            </div>
+
+
+            <div class="summary-grid">
+
+                <div>
+                    <small>CPU</small>
+                    <strong id="summaryCpu">--</strong>
+                </div>
+
+                <div>
+                    <small>GPU</small>
+                    <strong id="summaryGpu">--</strong>
+                </div>
+
+                <div>
+                    <small>RAM</small>
+                    <strong id="summaryRam">--</strong>
+                </div>
+
+                <div>
+                    <small>STORAGE</small>
+                    <strong id="summaryStorage">--</strong>
+                </div>
+
+                <div>
+                    <small>PSU</small>
+                    <strong id="summaryPsu">--</strong>
+                </div>
+
+                <div>
+                    <small>CASE</small>
+                    <strong id="summaryCase">--</strong>
+                </div>
+
+            </div>
+
+
+            <!-- Total -->
+            <div class="summary-total">
+
+                <small>TOTAL</small>
+
+                <h3 id="summaryTotal">
+                    0 DH
+                </h3>
+
+            </div>
+
+
+            <!-- Performance -->
+            <div class="performance-score">
+
+                <small>PERFORMANCE SCORE</small>
+
+                <h3 id="performanceScore">
+                    0 / 100
+                </h3>
+
+                <p id="performanceText">
+                    Select your components to see the score.
+                </p>
+
+            </div>
+
+
+            <!-- FPS -->
+            <div class="fps-estimator">
+
+                <small>ESTIMATED GAMING FPS</small>
+
+                <h3 id="fpsEstimate">
+                    -- FPS
+                </h3>
+
+                <p id="fpsText">
+                    Estimated at 1080p.
+                </p>
+
+            </div>
+
+
+            <!-- Rating -->
+            <div class="build-rating">
+
+                <small>BUILD RATING</small>
+
+                <h3 id="buildRating">
+                    --
+                </h3>
+
+                <p id="buildRatingText">
+                    Check your build to get a rating.
+                </p>
+
+            </div>
+
+
+            <!-- Quality -->
+            <div class="build-quality">
+
+                <small>BUILD QUALITY</small>
+
+                <h3 id="buildQuality">
+                    --
+                </h3>
+
+                <p id="buildQualityText">
+                    Check your build to see its quality.
+                </p>
+
+            </div>
+
+
+            <!-- Upgrade -->
+            <div class="upgrade-suggestions">
+
+                <small>UPGRADE SUGGESTIONS</small>
+
+                <h3 id="upgradeTitle">
+                    🔧 BUILD RECOMMENDATION
+                </h3>
+
+                <p id="upgradeText">
+                    Check your build to get upgrade suggestions.
+                </p>
+
+            </div>
+
+
+            <!-- Save / Load -->
+            <div class="save-build">
+
+                <button id="saveBuildBtn">
+                    💾 SAVE BUILD
+                </button>
+
+                <button id="loadBuildBtn">
+                    🔄 LOAD SAVED BUILD
+                </button>
+
+                <button id="resetBuildBtn">
+                    ♻️ RESET BUILD
+                </button>
+
+                <button id="printBuildBtn">
+                    🖨️ PRINT BUILD
+                </button>
+
+                <p id="saveBuildMessage"></p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         MOROCCAN STORES
+    ========================== -->
+    <section class="section stores-section" id="stores">
+
+        <div class="section-title">
+
+            <small>STEP 03</small>
+
+            <h2>
+                MOROCCAN <span>PC STORES</span>
+            </h2>
+
+            <p>
+                Find components from popular Moroccan PC stores.
+            </p>
+
+        </div>
+
+
+        <div class="stores-grid">
+
+
+            <!-- SetupGame -->
+            <div class="store-card">
+
+                <div class="store-logo">
+    <img src="https://setupgame.ma/wp-content/uploads/2025/08/logo.png" alt="SetupGame Logo">
+</div>
+
+                <div class="store-info">
+
+                    <h3>SetupGame</h3>
+
+                    <p>
+                        Gaming PCs, components,
+                        GPUs, CPUs, RAM and more.
+                    </p>
+
+                    <span class="store-location">
+                        🇲🇦 Morocco
+                    </span>
+
+                </div>
+
+                <a
+                    class="store-btn"
+                    href="#"
+                    target="_blank"
+                >
+                    VISIT STORE →
+                </a>
+
+            </div>
+
+
+            <!-- NextLevelPC -->
+            <div class="store-card">
+
+                <div class="store-logo">
+    <img src="https://nextlevelpc.ma/img/nextlevelpc-logo-1724769782.jpg" alt="NextLevelPC Logo">
+</div>
+
+                <div class="store-info">
+
+                    <h3>NextLevelPC</h3>
+
+                    <p>
+                        PC components, gaming PCs,
+                        GPUs, CPUs and accessories.
+                    </p>
+
+                    <span class="store-location">
+                        🇲🇦 Morocco
+                    </span>
+
+                </div>
+
+                <a
+                    class="store-btn"
+                    href="#"
+                    target="_blank"
+                >
+                    VISIT STORE →
+                </a>
+
+            </div>
+
+
+            <!-- UltraPC -->
+            <div class="store-card">
+
+                <div class="store-logo">
+    <img src="https://pp.ultrapc.ma/img/logo.png" alt="UltraPC Logo">
+</div>
+
+                <div class="store-info">
+
+                    <h3>UltraPC</h3>
+
+                    <p>
+                        PC hardware, gaming components
+                        and complete builds.
+                    </p>
+
+                    <span class="store-location">
+                        🇲🇦 Morocco
+                    </span>
+
+                </div>
+
+                <a
+                    class="store-btn"
+                    href="#"
+                    target="_blank"
+                >
+                    VISIT STORE →
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- Price comparison -->
+        <div class="price-comparison">
+
+            <div class="comparison-header">
+
+                <small>PRICE COMPARISON</small>
+
+                <h2>
+                    FIND THE <span>BEST PRICE</span>
+                </h2>
+
+                <p>
+                    Compare component prices between stores.
+                </p>
+
+            </div>
+
+
+            <div class="comparison-table-wrapper">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>COMPONENT</th>
+                            <th>SETUPGAME</th>
+                            <th>NEXTLEVELPC</th>
+                            <th>ULTRAPC</th>
+                            <th>BEST PRICE</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="priceComparisonBody">
+
+                        <tr>
+                            <td>AMD Ryzen 5 5600</td>
+                            <td>1,499 DH</td>
+                            <td>--</td>
+                            <td>--</td>
+                            <td class="best-price">
+                                1,499 DH
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+    <footer>
+
+        <div class="footer-logo">
+            <span>PC</span> BUILD CALCULATOR
+        </div>
+
+        <p>
+    Build smarter. Compare better. Game harder.
+</p>
+
+<p class="creator">
+    Created by <span>Adam Hayae</span>
+</p>
+
+<small>
+    © 2026 PC Build Calculator — Morocco
+</small>
+    </footer>
+
+
+    <!-- =========================
+         LOADING SCREEN
+         MUST BE BEFORE SCRIPT
+    ========================== -->
+
+    <script src="script.js"></script>
+
+</body>
+</html>
